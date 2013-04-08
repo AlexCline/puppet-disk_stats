@@ -22,6 +22,10 @@ if Gem.available? 'sys-filesystem'
       setcode { m.mount_type }
     end
 
+    Facter.add("disk_stats#{label}_path") do
+      setcode { stats.path }
+    end
+
     Facter.add("disk_stats#{label}_size") do
       setcode { blocks_to_bytes( stats.block_size, stats.blocks ) }
     end
