@@ -2,6 +2,12 @@ disk_stats
 =======
 *A Puppet module containing a set of facts about system disk stats and usage.*
 
+Installation
+------
+
+The disk_stats module requires the 'sys/filesystem' ruby gem.  You can install it using:
+    gem install sys-filesystem
+
 
 Support
 -------
