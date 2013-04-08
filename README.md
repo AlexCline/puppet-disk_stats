@@ -2,10 +2,27 @@ disk_stats
 =======
 *A Puppet module containing a set of facts about system disk stats and usage.*
 
+Examples
+------
+Facts are created for each mounted partition in the system.  The name of the fact is generated from the mount path of the partition.
+
+
+    disk_stats_root_free => 18 GB
+    disk_stats_root_options => rw,errors=remount-ro
+    disk_stats_root_path => /
+    disk_stats_root_size => 20 GB
+    disk_stats_root_type => ext4
+    disk_stats_root_used => 2 GB
+
+
+'''Note: Swap and [binfmt](http://en.wikipedia.org/wiki/Binfmt_misc) partitions are not shown.
+
+
 Installation
 ------
 
 The disk_stats module requires the 'sys/filesystem' ruby gem.  You can install it using:
+
     gem install sys-filesystem
 
 
