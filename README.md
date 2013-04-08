@@ -15,7 +15,7 @@ Facts are created for each mounted partition in the system.  The name of the fac
     disk_stats_root_used => 2 GB
 
 
-'''Note: Swap and [binfmt](http://en.wikipedia.org/wiki/Binfmt_misc) partitions are not shown.
+_Note: Swap and [binfmt](http://en.wikipedia.org/wiki/Binfmt_misc) partitions are not shown._
 
 
 Installation
