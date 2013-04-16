@@ -1,5 +1,5 @@
 name    'AlexCline-disk_stats'
-version '0.0.3'
+version '0.1.0'
 author 'Alex Cline <alex.cline@gmail.com>'
 license 'Apache License, Version 2.0'
 summary 'A Puppet module containing a set of facts about system disk stats and usage.'
