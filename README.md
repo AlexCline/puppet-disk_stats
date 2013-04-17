@@ -26,14 +26,16 @@ _Note: Swap and [binfmt](http://en.wikipedia.org/wiki/Binfmt_misc) partitions an
 Installation
 ------
 
-The disk_stats module requires the 'sys/filesystem' ruby gem.  You can install it using:
+The disk_stats module requires rubygems and the 'sys/filesystem' gem.  You can install it using:
 
     gem install sys-filesystem
 
-Or, you can include the 'disk_stats' class on your nodes.
+Or, you can include the 'disk_stats' class on your nodes to install the required dependencies.
 
     include disk_stats
 
+__If your node doesn't have the required dependencies on the first puppet run, the facts will not be properly populated.__
+__You'll need to run puppet twice: one to install deps, one to populate the facts.__
 
 Support
 -------
