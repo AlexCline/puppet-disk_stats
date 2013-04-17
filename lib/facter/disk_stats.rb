@@ -5,7 +5,7 @@ require 'facter'
 require 'rubygems'
 
 
-if Gem.available? 'sys-filesystem'
+if Gem::Specification::find_all_by_name('sys-filesystem').any?
   require 'sys/filesystem'
 
   disks = []
