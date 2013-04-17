@@ -18,6 +18,11 @@ if Gem.available? 'sys-filesystem'
     label = m.mount_point == '/' ? '_root' : m.mount_point.gsub('/', '_')
     stats = Sys::Filesystem.stat(m.mount_point)
 
+    # Don't print filesystems that have 0 total blocks
+    if stats.blocks == 0
+      next
+    end
+
     Facter.add("disk_stats#{label}_type") do
       setcode { m.mount_type }
     end
