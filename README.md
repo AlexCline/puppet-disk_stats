@@ -2,6 +2,11 @@ disk_stats
 =======
 *A Puppet module containing a set of facts about system disk stats and usage.*
 
+Tested on:
+
+* CentOS 6.4
+* Ubuntu 12.04 LTS
+
 Examples
 ------
 Facts are created for each mounted partition in the system.  The name of the fact is generated from the mount path of the partition.
