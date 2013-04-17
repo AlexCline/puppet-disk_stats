@@ -4,4 +4,5 @@
 
 include disk_stats
 
-class { 'disk_stats': }
+# You can use this form too:
+# class { 'disk_stats': }
