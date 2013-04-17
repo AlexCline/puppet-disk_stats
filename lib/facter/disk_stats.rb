@@ -7,6 +7,8 @@ require 'rubygems'
 
 if Gem.available? 'sys-filesystem'
   require 'sys/filesystem'
+
+  disks = []
   
   Sys::Filesystem.mounts.each do |m|
 
@@ -47,6 +49,13 @@ if Gem.available? 'sys-filesystem'
       setcode { m.options }
     end
 
+    # Strip leading '_' from the label.
+    disks.push label[1..-1]
+
+  end
+
+  Facter.add('disk_stats_disks') do
+    setcode { disks.join(',') }
   end
 
 else
