@@ -15,7 +15,7 @@ Facts are created for each mounted partition in the system.  The name of the fac
     disk_stats_root_used => 2 GB
 
 
-_Note: Swap and [binfmt](http://en.wikipedia.org/wiki/Binfmt_misc) partitions are not shown._
+_Note: Swap and [binfmt](http://en.wikipedia.org/wiki/Binfmt_misc) partitions and devices with 0 blocks are not shown._
 
 
 Installation
@@ -24,6 +24,10 @@ Installation
 The disk_stats module requires the 'sys/filesystem' ruby gem.  You can install it using:
 
     gem install sys-filesystem
+
+Or, you can include the 'disk_stats' class on your nodes.
+
+    include disk_stats
 
 
 Support
