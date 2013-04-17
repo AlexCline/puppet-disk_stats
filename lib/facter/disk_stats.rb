@@ -4,8 +4,16 @@
 require 'facter'
 require 'rubygems'
 
+gem_present = false
 
-if Gem::Specification::find_all_by_name('sys-filesystem').any?
+# Check for old version of RubyGems
+if Gem::Specification.respond_to?('find_all_by_name')
+  gem_present = Gem::Specification::find_all_by_name('sys-filesystem').any?
+else
+  gem_present = Gem.available?('sys-filesystem')
+end
+
+if gem_present
   require 'sys/filesystem'
 
   disks = []
