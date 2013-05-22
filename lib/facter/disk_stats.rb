@@ -26,7 +26,15 @@ if gem_present
     end
 
     label = m.mount_point == '/' ? '_root' : m.mount_point.gsub('/', '_')
-    stats = Sys::Filesystem.stat(m.mount_point)
+
+    begin
+      stats = Sys::Filesystem.stat(m.mount_point)
+    rescue Exception => e
+      Facter.add("disk_stats#{label}") do
+        setcode { "Unable to stat mountpoint: #{e}" }
+      end
+      next
+    end
 
     # Don't print filesystems that have 0 total blocks
     if stats.blocks == 0
